@@ -1,9 +1,5 @@
 package employeesSearch;
 
-interface Details {
-  public void returnDetails();
-}
-
 public class Worker implements Details {
   String name;
   String surname;
