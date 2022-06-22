@@ -5,7 +5,7 @@ public class Main {
         System.out.println("Hello world!");
         String msg;
 
-        Koło circle1 = new Koło();
+        Circle circle1 = new Circle();
         if(circle1.containsPoint(5.0,5.0))
         {
             msg = "Zawiera punkt 5.0 5.0";
@@ -17,20 +17,20 @@ public class Main {
     }
 }
 
-class Punkt {
+class Point {
     double x;
     double y;
 
     double max = 10.0;
     double min = 0.0;
 
-    public Punkt(){
+    public Point(){
         this.x= Math.floor(Math.random()*(max-min+1)+min);
         this.y= Math.floor(Math.random()*(max-min+1)+min);
 
     }
 
-    public Punkt(double x, double y) {
+    public Point(double x, double y) {
         this.x = x;
         this.y = y;
 
@@ -39,13 +39,13 @@ class Punkt {
 
 
 }
-class Koło extends Punkt
+class Circle extends Point
 {
     double r;
     double maxR=2.0;
     double minR=1.0;
 
-    public Koło()
+    public Circle()
     {
         this.x= Math.floor(Math.random()*(max-min+1)+min);
         this.y= Math.floor(Math.random()*(max-min+1)+min);
