@@ -75,20 +75,20 @@ public class FlightDatabase {
     return result;
   }
 
-  public List<Flight> getFlights(String start, String end) {
+  public List<Journey> getFlights(String start, String end) {
     List<Flight> startList = getFlightsFromCity(start);
     List<Flight> endList = getFlightsToCity(end);
+    ArrayList<Journey> result = new ArrayList<>();
 
-    ArrayList<Flight> result = new ArrayList<>();
+
 
     for (Flight starting : startList) {
       if (starting.departure.equals(start) && starting.arrival.equals(end)) {
-        result.add(starting);
+          result.add(new Journey(starting));
       }
       for (Flight ending : endList) {
         if (starting.arrival.equals(ending.departure)) {
-          result.add(starting);
-          result.add(ending);
+          result.add(new Journey(starting, ending));
         }
       }
     }

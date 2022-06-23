@@ -22,8 +22,12 @@ public class Main {
 
     System.out.println("\n");
 
-    flightDb.displayFlights(flightDb.getFlights(FlightDatabase.BERLIN, FlightDatabase.TOKYO));
+    /*flightDb.displayFlights(flightDb.getFlights(FlightDatabase.BERLIN, FlightDatabase.TOKYO));*/
+    List<Journey> journeys = flightDb.getFlights(FlightDatabase.BERLIN, FlightDatabase.TOKYO);
+    System.out.println(journeys);
+    journeys = flightDb.getFlights(FlightDatabase.PORTO, FlightDatabase.PARIS);
+    System.out.println(journeys);
     System.out.println("\n");
-    flightDb.displayFlights(flightDb.getFlights(FlightDatabase.PORTO, FlightDatabase.PARIS));
+    /*flightDb.displayFlights(flightDb.getFlights(FlightDatabase.PORTO, FlightDatabase.PARIS));*/
   }
 }
