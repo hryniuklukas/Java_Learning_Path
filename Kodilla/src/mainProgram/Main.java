@@ -1,5 +1,6 @@
+package mainProgram;
+
 import java.util.List;
-import java.util.ArrayList;
 import flightSearch.*;
 
 public class Main {
@@ -22,12 +23,12 @@ public class Main {
 
     System.out.println("\n");
 
-    /*flightDb.displayFlights(flightDb.getFlights(FlightDatabase.BERLIN, FlightDatabase.TOKYO));*/
+
     List<Journey> journeys = flightDb.getFlights(FlightDatabase.BERLIN, FlightDatabase.TOKYO);
     System.out.println(journeys);
     journeys = flightDb.getFlights(FlightDatabase.PORTO, FlightDatabase.PARIS);
     System.out.println(journeys);
     System.out.println("\n");
-    /*flightDb.displayFlights(flightDb.getFlights(FlightDatabase.PORTO, FlightDatabase.PARIS));*/
+
   }
 }
