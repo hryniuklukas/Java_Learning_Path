@@ -8,7 +8,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-        LocalDate date1 = LocalDate.of(2019,4,12); // LocalDate vs Date?
+        /*LocalDate date1 = LocalDate.of(2019,4,12); // LocalDate vs Date?
         LocalDate date2 = LocalDate.of(2017,10,10);
         LocalDate date3 = LocalDate.of(2020,12,8);
         LocalDate date4 = LocalDate.of(2014,3,25);
@@ -42,7 +42,9 @@ public class Main {
         System.out.println("\n");
         dipReg.getDiplomas(Diploma.ENGINEERING).forEach(System.out::println);
         System.out.println("\n");
-        System.out.println(dipReg.getOwnerOfDiploma(8));
+        System.out.println(dipReg.getOwnerOfDiploma(8));*/
+
+
     }
 }
 
