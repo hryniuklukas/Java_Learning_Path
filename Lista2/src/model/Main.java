@@ -1,9 +1,11 @@
 package model;
 
+import figures.*;
 import graduate.*;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
@@ -43,6 +45,28 @@ public class Main {
         dipReg.getDiplomas(Diploma.ENGINEERING).forEach(System.out::println);
         System.out.println("\n");
         System.out.println(dipReg.getOwnerOfDiploma(8));*/
+
+        Circle circle1 = new Circle(5);
+        Rectangle rectangle1 = new Rectangle(3,2);
+        Square square1 = new Square(2);
+
+        List<Figure> figures = new ArrayList<>();
+        figures.add(circle1);
+        figures.add(rectangle1);
+        figures.add(square1);
+
+        Order firstOrder = new Order(figures);
+        firstOrder.calculateCost();
+        System.out.println(firstOrder.getTotalCost());
+        System.out.println(firstOrder.getCutCost());
+        System.out.println(firstOrder.getMaterialCost());
+
+
+        Square square2 = new Square(5);
+        Order secondOrder = new Order(square2);
+        secondOrder.calculateCost();
+        System.out.println(secondOrder.getTotalCost());
+
 
 
     }

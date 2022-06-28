@@ -9,5 +9,16 @@ public class Rectangle extends Figure{
     {
         this.a = a;
         this.b = b;
+        this.circuit = 2*a+2*b;
+        this.area = a*b;
+    }
+
+    public double getCircuit()
+    {
+        return circuit;
+    }
+    public double getArea()
+    {
+        return area;
     }
 }
