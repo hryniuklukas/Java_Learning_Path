@@ -1,5 +1,5 @@
 package park;
 
-interface Identification {
+public interface Identification {
     public String returnNumberPlates();
 }
