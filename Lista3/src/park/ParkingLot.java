@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class ParkingLot {
-    List<String> allowedNumberPlates;
+    List<String> allowedNumberPlates; // to Set
     List<Vehicle> parkedVehicles;
 
     public ParkingLot() {
@@ -23,30 +23,19 @@ public class ParkingLot {
     }
 
     public boolean checkIfVehicleAllowed(Vehicle vehicle) {
-        boolean flag;
-        if (allowedNumberPlates.contains(vehicle.returnNumberPlates())) {
-            flag = true;
-        }else{
-            flag = false;
-        }
-        return flag;
+
+        return allowedNumberPlates.contains(vehicle.returnNumberPlates());
+
     }
 
-    public boolean checkIfVehicleParked(Vehicle vehicle) {
-        boolean flag;
-        if (parkedVehicles.contains(vehicle)) {
-            flag = true;
-        }else {
-            flag = false;
-        }
-        return flag;
+    public boolean checkIfVehicleParked(Vehicle vehicle) { //naming scheme -> isParked
+        return parkedVehicles.contains(vehicle);
     }
 
-    public boolean parkVehicle(Vehicle vehicle) throws VehicleNotAllowedException, VehicleParkedException  {
+    public void parkVehicle(Vehicle vehicle) throws VehicleNotAllowedException, VehicleParkedException  { //without throws (checked/unchecked exceptions)
         if (checkIfVehicleAllowed(vehicle)) {
             if(!checkIfVehicleParked(vehicle)){
                 parkedVehicles.add(vehicle);
-                return true;
             }else{
                 throw new VehicleParkedException(vehicle);
             }
