@@ -1,6 +1,8 @@
-package park;
+package exceptions;
 
-public class VehicleAbsentException extends Exception{
+import park.Vehicle;
+
+public class VehicleAbsentException extends RuntimeException{
     final String numberPlates;
     public VehicleAbsentException(Vehicle vehicle)
     {

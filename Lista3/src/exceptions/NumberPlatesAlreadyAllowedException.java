@@ -1,6 +1,6 @@
-package park;
+package exceptions;
 
-public class NumberPlatesAlreadyAllowedException extends Exception{
+public class NumberPlatesAlreadyAllowedException extends RuntimeException{
     final String numberPlates;
     public NumberPlatesAlreadyAllowedException(String numberPlates)
     {

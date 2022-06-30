@@ -1,25 +1,29 @@
 package park;
 
+import exceptions.NumberPlatesAlreadyAllowedException;
+import exceptions.VehicleAbsentException;
+import exceptions.VehicleNotAllowedException;
+import exceptions.VehicleParkedException;
+
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.ArrayList;
 
 public class ParkingLot {
-    List<String> allowedNumberPlates; // to Set
+    Set<String> allowedNumberPlates; // to Set
     List<Vehicle> parkedVehicles;
 
     public ParkingLot() {
-        allowedNumberPlates = new ArrayList<>();
+        allowedNumberPlates = new HashSet<>();
         parkedVehicles = new ArrayList<>();
     }
 
-    public void addAllowedNumberPlate(String numberPlate) throws NumberPlatesAlreadyAllowedException {
-        if(allowedNumberPlates.contains(numberPlate))
-        {
+    public void addAllowedNumberPlate(String numberPlate) {
+        if (allowedNumberPlates.contains(numberPlate)) {
             throw new NumberPlatesAlreadyAllowedException(numberPlate);
-        }else
-        {
-            allowedNumberPlates.add(numberPlate);
         }
+        allowedNumberPlates.add(numberPlate);
     }
 
     public boolean checkIfVehicleAllowed(Vehicle vehicle) {
@@ -32,23 +36,22 @@ public class ParkingLot {
         return parkedVehicles.contains(vehicle);
     }
 
-    public void parkVehicle(Vehicle vehicle) throws VehicleNotAllowedException, VehicleParkedException  { //without throws (checked/unchecked exceptions)
+    public void parkVehicle(Vehicle vehicle) {
         if (checkIfVehicleAllowed(vehicle)) {
-            if(!checkIfVehicleParked(vehicle)){
+            if (!checkIfVehicleParked(vehicle)) {
                 parkedVehicles.add(vehicle);
-            }else{
+            } else {
                 throw new VehicleParkedException(vehicle);
             }
-        }else{
+        } else {
             throw new VehicleNotAllowedException(vehicle);
         }
     }
-    public void releaseVehicle(Vehicle vehicle) throws VehicleAbsentException {
-        if(checkIfVehicleParked(vehicle))
-        {
+
+    public void releaseVehicle(Vehicle vehicle) {
+        if (checkIfVehicleParked(vehicle)) {
             parkedVehicles.remove(vehicle);
-        }else
-        {
+        } else {
             throw new VehicleAbsentException(vehicle);
         }
 

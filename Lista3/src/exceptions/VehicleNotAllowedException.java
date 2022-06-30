@@ -1,6 +1,8 @@
-package park;
+package exceptions;
 
-public class VehicleNotAllowedException extends Exception{
+import park.Vehicle;
+
+public class VehicleNotAllowedException extends RuntimeException{
     final String numberPlates;
     public VehicleNotAllowedException(Vehicle vehicle)
     {

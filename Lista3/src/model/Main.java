@@ -1,5 +1,9 @@
 package model;
 
+import exceptions.NumberPlatesAlreadyAllowedException;
+import exceptions.VehicleAbsentException;
+import exceptions.VehicleNotAllowedException;
+import exceptions.VehicleParkedException;
 import park.*;
 
 public class Main {
