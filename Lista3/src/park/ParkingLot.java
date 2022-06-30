@@ -26,19 +26,19 @@ public class ParkingLot {
         allowedNumberPlates.add(numberPlate);
     }
 
-    public boolean checkIfVehicleAllowed(Vehicle vehicle) {
+    public boolean isAllowed(Vehicle vehicle) {
 
         return allowedNumberPlates.contains(vehicle.returnNumberPlates());
 
     }
 
-    public boolean checkIfVehicleParked(Vehicle vehicle) { //naming scheme -> isParked
+    public boolean isParked(Vehicle vehicle) { //naming scheme -> isParked
         return parkedVehicles.contains(vehicle);
     }
 
     public void parkVehicle(Vehicle vehicle) {
-        if (checkIfVehicleAllowed(vehicle)) {
-            if (!checkIfVehicleParked(vehicle)) {
+        if (isAllowed(vehicle)) {
+            if (!isParked(vehicle)) {
                 parkedVehicles.add(vehicle);
             } else {
                 throw new VehicleParkedException(vehicle);
@@ -49,7 +49,7 @@ public class ParkingLot {
     }
 
     public void releaseVehicle(Vehicle vehicle) {
-        if (checkIfVehicleParked(vehicle)) {
+        if (isParked(vehicle)) {
             parkedVehicles.remove(vehicle);
         } else {
             throw new VehicleAbsentException(vehicle);
