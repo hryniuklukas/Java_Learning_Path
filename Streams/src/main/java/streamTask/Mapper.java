@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public interface Mapper {
-    static List<Target> mapSourceToTarget(List<Source> sourceList) {
+public abstract class Mapper {
+    public static List<Target> mapSourceToTarget(List<Source> sourceList) {
         List<Target> targetList = new ArrayList<>();
 
         sourceList.stream().collect(Collectors.groupingBy(Source::getTypeAndSomeId)).forEach((key, value) -> {

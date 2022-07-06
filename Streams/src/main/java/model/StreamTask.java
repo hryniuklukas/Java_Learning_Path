@@ -1,4 +1,5 @@
 package model;
+
 import streamTask.Source;
 import streamTask.Target;
 import streamTask.Mapper;
@@ -24,8 +25,8 @@ import java.util.List;
         {"type": "type3", "someId": 3, "identifiers":["iden8"]}]*/
 
 public class StreamTask {
-    public static void main(String[] args)
-    {
+
+    public static void main(String[] args) {
         List<Source> sourceList = new ArrayList<>();
         sourceList.add(new Source("type1", 3, "iden1"));
         sourceList.add(new Source("type1", 3, "iden2"));
@@ -35,6 +36,8 @@ public class StreamTask {
         sourceList.add(new Source("type2", 3, "iden6"));
         sourceList.add(new Source("type1", 3, "iden7"));
         sourceList.add(new Source("type3", 3, "iden8"));
+
+
         List<Target> targetList = Mapper.mapSourceToTarget(sourceList);
         System.out.println(targetList);
 
